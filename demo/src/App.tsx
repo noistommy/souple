@@ -77,7 +77,7 @@ function Nav() {
         <div className="be-button small" nt-tooltip="pos: bottom-center">
           <div nt-target="true">
             <i className="xi-github"></i>
-            <span className='pl-4'>noistommy/react-nt-tooltip</span>
+            <span className='pl-4'>noistommy/souple</span>
           </div>
           <i className="icon left xi-github"></i>
           Github
