@@ -15,11 +15,12 @@
 
 ## Demo
 
-![docs_preview](https://github.com/user-attachments/assets/933d21ac-7eea-4a7b-9d04-87a9f8def9de)
+![docs_preview](https://github.com/user-attachments/assets/2967be7e-61cf-4066-894d-945b83ff9c49)
 
-[@noistommy/souple](https://noistommy.github.io/souple) demo page.
+[@noistommy/nt-tooltip](https://noistommy.github.io/nt-tooltip) demo page.
 
----
+--- -->
+
 <!--
 ## Installation
 
