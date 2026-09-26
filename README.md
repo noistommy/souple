@@ -19,39 +19,63 @@
 
 [@noistommy/nt-tooltip](https://noistommy.github.io/nt-tooltip) demo page.
 
---- -->
+---
 
 <!--
 ## Installation
 
-#### NPM
-
-
-#### CDN
-
 ---
+-->
 
 ## Usage
 
 ### Registration
 
-### Use Tooltip in Component JSX
+```tsx
+import { Souple } from "@noistommy/souple";
+import "@noistommy/souple/souple.css";
+```
+
+### Use Souple in Component TSX
+
+```tsx
+
+export default Exanple() {
+  const [device, setDevice] = useState<string>('desktop')
+
+  const handleChangeDevice = (d) => setDevice(d)
+  return (
+    <Souple currentDevice={device} changeDevice={handleChangeDevice}>
+      <Souple.Control
+        showSelector={true}
+        showTypeSelector={true}
+        showLabel={true}
+        showLandscape={true}
+      />
+      <Souple.Viewport />
+    </Souple>
+  )
+}
+```
 
 ---
 
-## Options
+## Props
 
-- **content**: _string_ ▶︎ ``
-  Content of tooltip
-- **trigger**: _string_ ▶︎ `hover`
-  Select to event trigger of tooltip
-- **invert**: _boolean_ ▶︎ `true`
-  Invert theme of tooltip with system theme's default
-- **size**: _'small' | null_ ▶︎ `null`
-- **padding**: _number_ ▶︎ ``
-- **customClass**: _string_ ▶︎ ``
-- **maxWidth**: _number_ ▶︎ `250`
-- **textAlign**: _'left' | 'center' | 'right'_ ▶︎ `center`
-- **offset**: _number_ ▶︎ `10`
-- **external**: _'show' | 'hide' | null_ ▶︎ `null`
-- **zIndex**: _number_ ▶︎ `99999999` -->
+#### Souple Props
+
+- **currentDevice**: _string_ ▶︎ `desktop`
+  Set init device
+- **changeDevice**: _function_ ▶︎ `() => {}`
+  Callback function when device is changed
+
+#### Souple.Control Props
+
+- **showSelector**: _boolean_ ▶︎ `true`
+  Show device selector
+- **showTypeSelector**: _boolean_ ▶︎ `true`
+  Show device type selector
+- **showLabel**: _boolean_ ▶︎ `true`
+  Show device label
+- **showLandscape**: _boolean_ ▶︎ `true`
+  Show landscape mode
