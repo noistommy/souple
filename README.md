@@ -15,9 +15,9 @@
 
 ## Demo
 
-![docs_preview](https://github.com/user-attachments/assets/2967be7e-61cf-4066-894d-945b83ff9c49)
+![docs_preview](https://github.com/user-attachments/assets/4b8013c5-e791-4ad9-bdf5-987bdf3aa49f)
 
-[@noistommy/nt-tooltip](https://noistommy.github.io/nt-tooltip) demo page.
+[@noistommy/souple](https://noistommy.github.io/souple) demo page.
 
 ---
 
