@@ -32,7 +32,7 @@ const libConfig: UserConfig = {
       formats: libFormats,
       fileName: (format) => {
         switch(format) {
-          case 'es': return 'souple.js'
+          case 'es': return 'souple.es.js'
           case 'umd': return 'souple.umd.js'
           case 'cjs': return 'souple.cjs'
           default: return `souple.${format}.js`
