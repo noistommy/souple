@@ -15,9 +15,11 @@ const Root = ({
   changeDevice = () => {},
   landscape = false,
   dWidth = null,
-  dHeight = null
+  dHeight = null,
+  minWidth = 1024
 }: RootProps) => {
   const [isTopWindow] = useState(() => window.self === window.top)
+  const [isUse, setIsUse] = useState(true)
   // const [isDsize, setIsDsize] = useState(() => dWidth !== null && dHeight !== null)
   const [device, setDevice] = useState(currentDevice)
   const [prevCurrentDevice, setPrevCurrentDevice] = useState(currentDevice)
@@ -52,14 +54,20 @@ const Root = ({
   }, [isTopWindow])
 
   useEffect(() => {
+    if (!isTopWindow) return
+    const resize = () => {
+      if(window.innerWidth < minWidth) setIsUse(false)
+      else setIsUse(true)
+    }
+    window.addEventListener('resize', resize)
+    resize()
+    return () => window.removeEventListener('resize', resize)
+  }, [isTopWindow, minWidth])
+
+  useEffect(() => {
     changeDevice(device)
-  }, [device, changeDevice])
-  
-  // useEffect(() => {
-  //   if (dWidth !== null && dHeight !== null) {
-  //     setIsDsize(true)
-  //   }
-  // }, [dWidth, dHeight])
+    if(!isUse) console.warn('[WARNING]Souple: If you want to use, your screen size bigger than `minWidth`.  set Souple `minWidth` prop.')
+  }, [device, changeDevice, isUse])
 
   const isDsize = useMemo(() => dWidth !== null && dHeight !== null, [dWidth, dHeight])
 
@@ -71,8 +79,8 @@ const Root = ({
   }, [isLandscape, device, deviceList, dWidth, dHeight])
 
   const value = useMemo(() =>({
-    device, setDevice, isLandscape, setIsLandscape, deviceList, size, isTopWindow, isDsize
-  }),[device, isLandscape, deviceList, size, isTopWindow, isDsize])
+    device, setDevice, isLandscape, setIsLandscape, deviceList, size, isTopWindow, isDsize, isUse
+  }),[device, isLandscape, deviceList, size, isTopWindow, isDsize, isUse])
 
   return (
     <SoupleContext.Provider value={value}>
@@ -94,9 +102,9 @@ const Control = ({
   showTypeSelector?: boolean
   showLandscape?: boolean
 }) => {
-  const { device, isTopWindow, isDsize } = useSouple()
+  const { device, isTopWindow, isDsize, isUse } = useSouple()
 
-  if (!isTopWindow || device === 'desktop') return null
+  if (!isTopWindow || device === 'desktop' || !isUse) return null
   return (
     <div className={['souple-control', className, device, isDsize ? 'dsize' : null].join(' ')}>
       {showSelector && <DeviceSelector />}
@@ -205,12 +213,12 @@ const Lanscape = () => {
 }
 
 const Viewport = () => {
-  const { isTopWindow, device, size } = useSouple()
+  const { isTopWindow, device, size, isUse } = useSouple()
   // UNSAFE_LocationContext가 없으면(라우터 없음) undefined → window.location으로 폴백
   const locationCtx = useContext(UNSAFE_LocationContext)
   const pathname = locationCtx?.location.pathname ?? window.location.pathname
 
-  if (!isTopWindow) return null
+  if (!isTopWindow || !isUse) return null
 
   const src = window.location.origin + pathname
   return (

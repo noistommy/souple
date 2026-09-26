@@ -36,6 +36,7 @@ body:has(#SoupleView.souple-view:not(.desktop)) {
     justify-content: center;
     align-items: center;
     > iframe {
+      flex-shrink: 0;
       border-radius: 20px;
       border: 10px solid var(--souple-device-brd);
     }

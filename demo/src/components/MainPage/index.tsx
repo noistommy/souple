@@ -29,7 +29,7 @@ export default function MainPage() {
         <Souple.Control showTypeSelector={showTypeSelector} showSelector={showSelector} showSize={showSize} showLandscape={showLandscape} />
         <Souple.Viewport />
       </Souple>
-      {/* <GetStart /> */}
+      
       
       {/* <hr className="be hr mt-10" /> */}
       
@@ -40,10 +40,12 @@ export default function MainPage() {
         </div>
       </div>
 
+      <GetStart />
+
       <div className="detail mt-10">
         <div className="header">
           <div className="bold large">Base</div>
-          <p>디바이스 타입은 크게 'Desktop', 'Tablet', 'Mobile' 세가지로 나뉩니다. 기본값인 Desktop 외 다바이스 값에 따라 반응형 화면을 보여줍니다. 구조상 'mobile', 'tablet'은 반응형 모드 'On' 상태이고 'desktop'은 'Off' 상태입니다.  </p>
+          <p>디바이스 타입은 크게 'Desktop', 'Tablet', 'Mobile' 세가지로 나뉩니다. 기본값인 Desktop 외 디바이스 값에 따라 반응형 화면을 보여줍니다. 구조상 'mobile', 'tablet'은 반응형 모드 'On' 상태이고 'desktop'은 'Off' 상태입니다.  </p>
         </div>
         <div>
           <div className="be-segment surface align-center">
@@ -262,6 +264,20 @@ export default function MainPage() {
       </div>
       <div className="detail mt-10">
         <div className="header">
+          <div className="bold large">MinWidth</div>
+          <p>반응형 화면 확인을 위한 최소값을 설정합니다. 기본값은 1024px입니다. 이 값보다 작아지면 반응형 모드를 취소하고 경고 메시지를 console에 표시합니다. </p>
+        </div>
+        <div>
+          <div className='be-segment border p-0'>
+            <CodeBlock
+              language='tsx'
+              code={Codes.minWidth}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="detail mt-10">
+        <div className="header">
           <div className="bold large">Key Control</div>
           <p>Souple은 사용자 접근성 향상을 위해 키보드 제어 기능을 제공합니다. </p>
         </div>
@@ -299,45 +315,38 @@ export default function MainPage() {
   )
 }
 
-// function GetStart() {
-//   return (
-//     <>
-//       <div className="detail mt-10">
-//         <div className="header">
-//           <div className="bold large">Installation</div>
-//           <p></p>
-//         </div>
-//         <div>
-//           <div className='be-segment border p-0'>
-//             <CodeBlock
-//               language='bash'
-//               code={`npm install @noistommy/nt-tooltip`}
-//             />
-//           </div>
-//         </div>
-//       </div>
-//       <div className="detail mt-10">
-//         <div className="header">
-//           <div className="bold large">Usage</div>
-//           <p>전역에서 실행 하여 프로젝트 전체 영역에서 툴팁을 사용 할 수 있습니다.</p>
-//           <p>컴포넌트 적용 시 반드시 nt-tooltip 속성이 children에 상속되도록 랜더링 해야 합니다.(html은 바로 적용 가능함)</p>
-//         </div>
-//         <div>
-//           <div className='be-segment border p-0'>
-//             <CodeBlock
-//               language='tsx'
-//               code={Codes.usage}
-//             />
-//           </div>
-//           <div className='be-segment border p-0'>
-//             <CodeBlock
-//               language='tsx'
-//               code={`// in component.tsx \n<Parent nt-tooltip="{... tooltip options}"> content</Parent>`}
-//             />
-//           </div>
-//         </div>
+function GetStart() {
+  return (
+    <>
+      <div className="detail mt-10">
+        <div className="header">
+          <div className="bold large">Installation</div>
+          <p></p>
+        </div>
+        <div>
+          <div className='be-segment border p-0'>
+            <CodeBlock
+              language='bash'
+              code={`npm install @noistommy/souple`}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="detail mt-10">
+        <div className="header">
+          <div className="bold large">Usage</div>
+          <p>Souple 컴포넌트를 사용하여 반응형 디바이스 뷰를 구현할 수 있습니다. 아래 예시에서는 useSelectDevice 훅을 사용하여 현재 디바이스 상태를 관리하고, Souple 컴포넌트를 사용하여 반응형 디바이스 뷰를 구현하고 있습니다.</p>
+        </div>
+        <div>
+          <div className='be-segment border p-0'>
+            <CodeBlock
+              language='tsx'
+              code={Codes.usage}
+            />
+          </div>
+        </div>
 
-//       </div>
-//     </>
-//   )
-// }
+      </div>
+    </>
+  )
+}

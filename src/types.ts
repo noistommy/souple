@@ -46,5 +46,6 @@ export type RootProps = {
   landscape?: boolean
   dWidth?: number | null
   dHeight?: number | null
+  minWidth?: number
 }
 export type Size = { width: number; height: number }

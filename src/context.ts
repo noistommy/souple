@@ -10,6 +10,7 @@ type SoupleContextValue = {
   size: Size
   isTopWindow: boolean
   isDsize: boolean
+  isUse: boolean
 }
 
 export const SoupleContext = createContext<SoupleContextValue | null>(null)

@@ -14,14 +14,12 @@
   },
   "main": "./dist/souple.cjs",
   "module": "./dist/souple.es.js",
-  "types": "./dist/index.d.ts",
   "unpkg": "./dist/souple.umd.js",
   "jsDelivr": "./dist/souple.umd.js",
   "exports": {
     ".": {
       "import": "./dist/souple.es.js",
       "require": "./dist/souple.cjs",
-      "types": "./dist/index.d.ts",
       "default": "./dist/souple.umd.js"
     },
     "./souple.css": "./dist/souple.css"
