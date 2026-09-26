@@ -81,7 +81,7 @@ function Nav() {
           </div>
           <i className="icon left xi-github"></i>
           Github
-          <a href="https://github.com/noistommy/react-nt-tooltip.git" className="link" target="_blank"></a>
+          <a href="https://github.com/noistommy/souple.git" className="link" target="_blank"></a>
         </div>
       </li>
     </nav>
