@@ -1,4 +1,5 @@
 import NTLogo from './img/nt-profile.svg'
+import SoupleIcon from './img/souple-icon.svg'
 import Frog from './img/frog-profile.svg'
 import VBeui from './img/be-ui-vue.svg'
 import RBeui from './img/be-ui-react.svg'
@@ -107,7 +108,7 @@ function Cabiner () {
                 </div>
               </div>
               <div className="item p-1">
-                <img src={NTLogo} alt="logo" style={{width: '20px'}} />
+                <img src={SoupleIcon} alt="logo" style={{width: '20px'}} />
                 <div className="item-title ml-4">Souple</div>
                 <div className="btn-set">
                   <div className="be-button compact round">
