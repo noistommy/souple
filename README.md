@@ -62,6 +62,32 @@ export default Exanple() {
 
 ---
 
+## ALL_DEVICE_LIST (Default Devices)
+
+| Device              | width | height | type    |
+| ------------------- | ----- | ------ | ------- |
+| Desktop Large       | 2560  | 1440   | Desktop |
+| Desktop             | 1920  | 1080   | Desktop |
+| Desktop Small       | 1440  | 900    | Desktop |
+| Laptop              | 1366  | 768    | Desktop |
+| Ipad Pro            | 1024  | 1366   | Tablet  |
+| Ipad Air            | 820   | 1180   | Tablet  |
+| Tablet              | 1024  | 768    | Tablet  |
+| Iphone 15 Pro Max   | 430   | 932    | Mobile  |
+| Iphone 14 Plus      | 428   | 926    | Mobile  |
+| Galaxy S23 Ultra    | 412   | 915    | Mobile  |
+| Iphone 15           | 393   | 852    | Mobile  |
+| Iphone 13           | 390   | 844    | Mobile  |
+| Pixel 7             | 412   | 892    | Mobile  |
+| Mobile              | 375   | 667    | Mobile  |
+| Iphone SE           | 375   | 667    | Mobile  |
+| Galaxy S8           | 360   | 740    | Mobile  |
+| Galaxy Z Fold       | 344   | 882    | Fold    |
+| Galaxy Z Fold Ultra | 674   | 691    | Fold    |
+| Iphone Duo          | 626   | 890    | Fold    |
+
+---
+
 ## Props
 
 #### Souple Props
