@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Cabinet from './NTCabinet/Cabinet.tsx'
 import MainPage from './components/MainPage'
 import './App.scss'
 import { version } from '../../package.json'
@@ -10,6 +9,8 @@ import '@noistommy/nt-tooltip/nt-tooltip.css'
 import '../../src/souple.scss'
 
 import souplePreview from './assets/img/souple_preview.png'
+
+import { NtCabinetReact } from 'nt-cabinet-component/react'
 
 function Header() {
   return (
@@ -99,7 +100,7 @@ function App() {
     <>
       <Header />
       <MainPage />
-      <Cabinet />
+      <NtCabinetReact module="souple" />
     </>
   )
 }
