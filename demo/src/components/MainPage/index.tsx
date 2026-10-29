@@ -1,5 +1,5 @@
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import CodeBlock from '../CodeBlock';
 import * as Codes from './code';
 
@@ -11,6 +11,9 @@ import SoupleControlPreview from '../../assets/img/souple-control-preview.png'
 //   base: '<div nt-tooltip="content: Tooltip Content;">...</div>',
 //   invert: ``
 // }
+import { useToast } from 'react-nt-toast';
+
+
 
 export default function MainPage() {
   const [selectedDevice, setSelectedDevice] = useSelectDevice('desktop');
@@ -19,9 +22,18 @@ export default function MainPage() {
   const [showSize, setShowSize] = useState(true);
   const [showLandscape, setShowLandscape] = useState(true);
 
+  const toast = useToast()
+
   const selectDevice = (value: string) => {
     setSelectedDevice(value);
   }
+
+  useEffect(() => {
+    toast.show('default', {
+      title: `${selectedDevice.toUpperCase()} mode!`,
+      description: `Changed to ${selectedDevice} mode!`,
+    }, {})
+  }, [selectedDevice])
 
   return (
     <div className="pb-10" style={{maxWidth: '780px', width: '100%', margin: '0 auto'}}>
